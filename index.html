@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Sports Journalist</title>
+<meta name="description" content="Sports journalism portfolio: college basketball, lacrosse, football and summer-league baseball.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f7f9;
+    --ink: #101828;
+    --muted: #556070;
+    --rule: #d3d8e0;
+    --orange: #e8590c;
+    --orange-deep: #c2410c;
+    --navy: #14233f;
+    --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+  .wrap { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Header */
+  .site-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 0;
+    font-family: var(--display); font-weight: 700; font-size: 1rem;
+  }
+  .site-header nav { display: flex; gap: 1.5rem; }
+  .site-header a { text-decoration: none; }
+  .site-header a:hover { text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--orange); text-decoration-thickness: 2px; }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    align-items: end;
+    padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 7vw, 6rem);
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 11vw, 8.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.75rem;
+  }
+  .hero .role {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: var(--orange-deep);
+  }
+  .hero .bio { max-width: 34rem; margin: 0 0 2rem; color: #2b3547; }
+  .hero-photo { margin: 0; }
+  .hero-photo img {
+    width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 30%;
+    border-bottom: 8px solid var(--orange);
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.975rem;
+    line-height: 1;
+    text-decoration: none;
+    padding: 0.85rem 1.25rem;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+    color: #fff;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  .btn:hover { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  /* Section titles */
+  section { padding: clamp(2.5rem, 6vw, 5rem) 0; }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0 0 0.75rem;
+  }
+  .section-intro { color: var(--muted); max-width: 36rem; margin: 0 0 2.5rem; }
+
+  /* Stories */
+  .stories { background: var(--navy); color: #fff; }
+  .stories .section-intro { color: #b9c3d6; }
+  .outlet { margin-top: 2.75rem; }
+  .outlet:first-of-type { margin-top: 0; }
+  .outlet h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--orange);
+  }
+  .story-list { list-style: none; margin: 0; padding: 0; }
+  .story {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+  }
+  .story h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .story .sport { display: block; font-size: 0.95rem; color: #b9c3d6; font-style: italic; margin-top: 0.25rem; }
+  .stories .btn { background: var(--orange); border-color: var(--orange); }
+  .stories .btn:hover { background: #fff; border-color: #fff; color: var(--navy); }
+  .stories :focus-visible { outline-color: #fff; }
+
+  /* Gallery */
+  .gallery { columns: 3 280px; column-gap: 1.25rem; }
+  .gallery figure { margin: 0 0 1.25rem; break-inside: avoid; }
+  .gallery img { width: 100%; }
+  .gallery figcaption { font-size: 0.95rem; color: var(--muted); padding-top: 0.5rem; font-style: italic; }
+
+  /* Contact */
+  .contact { border-top: 1px solid var(--rule); }
+  .contact p { max-width: 34rem; margin: 0 0 1.5rem; }
+  .contact .links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; align-items: start; }
+    .hero-photo { order: -1; }
+    .hero-photo img { aspect-ratio: 4 / 3; object-position: 40% 35%; }
+    .story { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site-header">
+    <span>Your Name</span>
+    <nav aria-label="Primary">
+      <a href="#stories">Stories</a>
+      <a href="#photos">Photos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Your Name</h1>
+        <p class="role">Sports journalist covering college basketball, lacrosse, football and baseball.</p>
+        <p class="bio">
+          I write profiles, game stories and features about the people behind the scores.
+          Replace this paragraph with two or three sentences about you: where you study or work,
+          what you cover, and what kind of stories you like to tell.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#stories">Read my stories</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/notebook.jpg" alt="A reporter writing questions in a notebook during an in-person interview" width="1200" height="1800">
+      </figure>
+    </div>
+  </main>
+</div>
+
+<section class="stories" id="stories">
+  <div class="wrap">
+    <h2 class="section-title">Selected stories</h2>
+    <p class="section-intro">Nine pieces from The Daily Orange, the Chatham Anglers and USA Lacrosse Magazine. Each button opens the full story in a new tab.</p>
+
+    <div class="outlet">
+      <h3>The Daily Orange</h3>
+      <ul class="story-list">
+        <li class="story">
+          <div>
+            <h4>Roy Danforth, the architect</h4>
+            <span class="sport">Men’s basketball</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/09/syracuse-mens-basketball-roy-danforth-the-architect/" target="_blank" rel="noopener" aria-label="Read story: Roy Danforth, the architect">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Tiana Mangakahia, a free spirit</h4>
+            <span class="sport">Women’s basketball</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2025/12/free-spirit-tiana-mangakahia-rememberance/" target="_blank" rel="noopener" aria-label="Read story: Tiana Mangakahia, a free spirit">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Cal Uche Izoje at the ACC tournament</h4>
+            <span class="sport">Women’s basketball</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/03/syracuse-womens-basketball-acc-tournament-cal-uche-izoje/" target="_blank" rel="noopener" aria-label="Read story: Cal Uche Izoje at the ACC tournament">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Luke Rhoa</h4>
+            <span class="sport">Men’s lacrosse</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/04/luke-rhoa-syracuse-mens-lacrosse-shooting/" target="_blank" rel="noopener" aria-label="Read story: Luke Rhoa">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Joey Spallina and a broken promise</h4>
+            <span class="sport">Men’s lacrosse</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/05/syracuse-mens-lacrosse-joey-spallina-broken-promise/" target="_blank" rel="noopener" aria-label="Read story: Joey Spallina and a broken promise">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Garvin St. John’s social media presence</h4>
+            <span class="sport">Football</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/09/syracuse-football-garvin-st-john-social-media-presence/" target="_blank" rel="noopener" aria-label="Read story: Garvin St. John’s social media presence">Read story</a>
+        </li>
+        <li class="story">
+          <div>
+            <h4>Umari Hatcher after the Louisville loss</h4>
+            <span class="sport">Football</span>
+          </div>
+          <a class="btn" href="https://dailyorange.com/2026/10/syracuse-football-louisville-loss-umari-hatcher/" target="_blank" rel="noopener" aria-label="Read story: Umari Hatcher after the Louisville loss">Read story</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="outlet">
+      <h3>Chatham Anglers</h3>
+      <ul class="story-list">
+        <li class="story">
+          <div>
+            <h4>Why Angel Cervantes spurned the MLB Draft for college baseball</h4>
+            <span class="sport">Baseball</span>
+          </div>
+          <a class="btn" href="https://www.chathamanglers.com/chatham-angler-news/2026/2433/Why-Chatham%E2%80%99S-Angel-Cervantes-Spurned-The-MLB-Draft-For-College-Baseball" target="_blank" rel="noopener" aria-label="Read story: Why Angel Cervantes spurned the MLB Draft for college baseball">Read story</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="outlet">
+      <h3>USA Lacrosse Magazine</h3>
+      <ul class="story-list">
+        <li class="story">
+          <div>
+            <h4>Casey Powell’s Le Moyne bet: a Hall of Fame player learns to coach</h4>
+            <span class="sport">Lacrosse</span>
+          </div>
+          <a class="btn" href="https://www.usalacrosse.com/magazine/casey-powells-le-moyne-bet-hall-fame-player-learns-coach" target="_blank" rel="noopener" aria-label="Read story: Casey Powell’s Le Moyne bet">Read story</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="photos">
+  <div class="wrap">
+    <h2 class="section-title">In the field</h2>
+    <p class="section-intro">Practices, press rows, ballparks and living rooms. The reporting happens wherever the story is.</p>
+
+    <div class="gallery">
+      <figure>
+        <img src="images/practice.jpg" alt="Three people watching a basketball player film a video on a phone during practice in a gym" loading="lazy" width="1800" height="1200">
+        <figcaption>Watching a video shoot at basketball practice.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/interview.jpg" alt="An older man in a recliner talking with a reporter whose back is to the camera" loading="lazy" width="1800" height="1200">
+        <figcaption>Sitting down for a long interview.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/press-row.jpg" alt="Two people working on laptops at a press table in a mostly empty arena" loading="lazy" width="1800" height="1200">
+        <figcaption>Writing from press row in an empty arena.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/ballpark.jpg" alt="Two smiling people in Chatham Anglers polo shirts standing on the grass at a ballpark" loading="lazy" width="1800" height="1200">
+        <figcaption>Game day with the Chatham Anglers.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/deadline.jpg" alt="A person typing on a laptop at a crowded press table outdoors" loading="lazy" width="1800" height="1200">
+        <figcaption>Filing on deadline at the ballpark.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/postgame.jpg" alt="A reporter listening to a coach in a Syracuse jacket outside a stadium at night" loading="lazy" width="1800" height="1200">
+        <figcaption>Waiting for postgame comments outside the stadium.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Get in touch</h2>
+    <p>Looking for a writer, a collaborator or an internship candidate? Send a note and I’ll reply soon.</p>
+    <div class="links">
+      <a class="btn" href="mailto:you@example.com">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://x.com/your-handle" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Your Name</div>
+</footer>
+
+</body>
+</html>
